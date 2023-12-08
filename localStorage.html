@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <form action="">
+        <button id="delete_all">Clear All</button>
+        <br>
+        <hr>
+        (Key : value) =
+        <input type="text" id="key">
+        :
+        <input type="text" id="value">
+        <button id="add">Add</button>
+        <br><br>
+        ket to delete = 
+        <input type="text" id="delete_key">
+        <button id="delete">Delete</button>
+        <br><br>
+    </form>
+    
+    <script>
+        //select all buttons
+        const addBtn = document.getElementById("add")
+        const delBtn = document.getElementById("delete")
+        const delAllBtn = document.getElementById("delete_all")
+        //select all inputs
+        const keyInput = document.getElementById("key")
+        const valueInput = document.getElementById("value")
+        const delKeyInput = document.getElementById("delete_key")
+
+        addBtn.addEventListener("click", addItem)
+        delBtn.addEventListener("click", delItem)
+        delAllBtn.addEventListener("click", delAllItems)
+
+        function addItem(e){
+            localStorage.setItem(keyInput.value, valueInput.value)
+        }
+
+        function delItem(e){
+            localStorage.removeItem(delKeyInput.value)
+        }
+
+        function delAllItems(e){
+            localStorage.clear()
+        }
+    </script>
+</body>
+</html>

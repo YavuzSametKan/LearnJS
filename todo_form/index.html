@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TODO List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1 class="mt-3">TODO List</h1>
+  <header class="card-body mt-3">
+    <div class="top_title">
+      <h2>Add Todo</h2>
+    </div>
+    <form id="add_form">
+      <div class="outline">
+        <input type="text" name="add_todo" placeholder="add todo.." />
+        <button type="submit" class="add_btn">Add</button>
+      </div>
+      <div class="flex-end">
+        <span class="character-count"></span>
+      </div>
+      <!-- <div class="message danger mt-3">
+          message..
+        </div> -->
+    </form>
+  </header>
+
+  <section class="card-body mt-3">
+    <div class="top_title">
+      <h2>Search TODO</h2>
+    </div>
+    <form>
+      <div class="outline">
+        <input type="search" name="search_todo" placeholder="search todo.." />
+      </div>
+    </form>
+  </section>
+
+  <main class="card-body mt-3">
+    <div class="top_title">
+      <button class="dlt_all">DELETE ALL</button>
+      <h2>All TODOS</h2>
+    </div>
+
+    <ul class="todos">
+      <span class="noTodo">Please enter a todo.</span>
+      <!-- <li>
+          <span class="todo_mission">TODO MISSION..</span>
+          <span class="dlt_btn">&times;</span>
+        </li> -->
+    </ul>
+  </main>
+  <script src="main.js"></script>
+</body>
+
+</html>

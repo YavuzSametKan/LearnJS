@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>windowObjesiÖrnek</title>
+  </head>
+  <body>
+
+    <button id="ac">aç</button>
+    <button id="kapat">kapat</button>
+
+    <script>
+      let ac = document.getElementById("ac");
+      let kapat = document.getElementById("kapat");
+      let MyWindow;
+      console.log(MyWindow);
+      if (MyWindow == null) {
+        ac.addEventListener("click", function () {
+          MyWindow = window.open(
+            "https://muhammetbaykara.com/",
+            "_blank",
+            "width=600, height=600, top=25, left=80"
+          );
+          ac.style.opacity = "0.5";
+          ac.style.pointerEvents = "none";
+        });
+        kapat.addEventListener("click", function () {
+          if (MyWindow != null) {
+            MyWindow.close();
+            ac.style.opacity = "1";
+            ac.style.pointerEvents = "auto";
+          } else alert("Pencere Açık Değil!");
+        });
+      }
+    </script>
+  </body>
+</html>
