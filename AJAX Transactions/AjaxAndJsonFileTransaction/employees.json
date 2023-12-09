@@ -1,0 +1,22 @@
+[
+    {
+        "name" : "Yavuz Samet Kan",
+        "department" : "Web Development",
+        "salary" : 23000
+    },
+    {
+        "name" : "Serhat Erdem",
+        "department" : "Web Development",
+        "salary" : 23000
+    }, 
+    {
+        "name" : "Ahmet Suat Can",
+        "department" : "Android Development",
+        "salary" : 23000
+    },
+    {
+        "name" : "Samet Berkant Koca",
+        "department" : "Informatics Technologies",
+        "salary" : 23000
+    }
+]
