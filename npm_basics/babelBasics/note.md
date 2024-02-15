@@ -2,7 +2,7 @@
 
 [Babel](https://babeljs.io/) temelde yazdığımız modern javascript kodlarını ES5 versiyonuna çeviren bir modüldür. Bu bizlere güncel olmayan tarayıcılarda desteklenmeyen ES6+ versiyon kodlarının çalışabilir olmasını sağlar çünkü babel bizim için ES5'e çevirme işlemi yapar ve bu kodlar tüm tarayıcılar tarafından desteklenir (Internet Explorer 11 dahil).
 
-dipnot: [bu web sayfasından](https://compat-table.github.io/compat-table) ECMAScript tarayıcı desteklerine bakabilirsiniz
+> dipnot: [bu web sayfasından](https://compat-table.github.io/compat-table) ECMAScript tarayıcı desteklerine bakabilirsiniz
 
 Elbette kafanızda şu soru oluşmuş olabilir; "2024'te kullandığımız tarayıcılar yeteri kadar gelişmişken ve ES6+'ı desteklerken neden bu modülü kullanma zahmetine giriyoruz?". Bu haklı bir soru ancak yazdığınız projeye bağlı olarak cevabın değişkenlik göstereceği de bir soru.
 
@@ -27,6 +27,4 @@ Babel'ı tanıdımıza göre babel'ı kullanmaya başlayalım.
 npm install @babel/cli @babel/core babel-polyfill @babel/preset-env --save-dev
 ```
 
-dipnot: bu modül yalnızca geliştirme ortamında işinize yarıyacağı için devDependency olarak kurulumunu yapmanızı sağlayacak komutu sizlerle paylaştım. Aksi durumu tercih ederseniz komuttan `--save-dev` etiketini silebilirsiniz. 
-
-
+> dipnot: bu modül yalnızca geliştirme ortamında işinize yarıyacağı için devDependency olarak kurulumunu yapmanızı sağlayacak komutu sizlerle paylaştım. Aksi durumu tercih ederseniz komuttan `--save-dev` etiketini silebilirsiniz. 
