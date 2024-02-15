@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+:root{
+    --main-w: 95vw;
+    --main-h: 90vh;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Patrick Hand", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+main{
+    height: var(--main-h);
+    width: var(--main-w);
+    border: 5px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#timeZone{
+    display: flex;
+    justify-content: right;
+    font-size: 35px;
+    gap: 20px;
+}
+
+#timeZone span{
+    user-select: none;
+    font-weight: bold;
+}
+
+#timeZone button{
+    background: transparent;
+    cursor: pointer;
+}
+
+#timeZone button:hover i{
+    color: tomato;
+}
+
+#timeZone button i{
+    font-size: 35px;
+    transition: ease .2s;
+}
+
+#currentTime{
+    font-size: 200px;
+    user-select: none;
+    font-weight: bold;
+}
+
+#currentDate{
+    display: block;
+    text-align: right;
+    font-size: 35px;
+    user-select: none;
+    font-weight: bold;
+}
+
+#timeZoneSelectModal{
+    opacity: 0;
+    pointer-events: none;
+    width: var(--main-w);
+    height: var(--main-h);
+    background-color: rgba(255, 255, 255, .7);
+    position: absolute;
+    border: 4px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .2s ease;
+}
+
+#timeZoneSelectModal #timeZoneSelectDiv{
+    width: 50%;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 1;
+    background-color: white;
+}
+
+#timeZoneSelectModal #timeZoneSelectDiv #timeZoneModalTitle{
+    font-size: 35px;
+    user-select: none;
+}
+
+#timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer{
+    display: flex;
+    gap: 15px;
+}
+
+#timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer #selectContainer{
+    width: 80%;
+    position: relative;
+}
+
+#timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer #selectContainer select{
+    width: 100%;
+    background-color: transparent;
+    border: 4px solid black;
+    border-radius: 10px;
+    font-size: 24px;
+    font-family: "Patrick Hand", cursive;
+    font-weight: bold;
+    padding: 20px;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    cursor: pointer;
+    position: relative;
+}
+
+#timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer #selectContainer i{
+    pointer-events: none;
+    font-size: 32px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer button{
+    background: transparent;
+    font-family: "Patrick Hand", cursive;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease .2s;
+}
+
+#timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer button:hover{
+    color: tomato;
+}
+
+@media only screen and (max-width: 700px) {
+    :root{
+        --main-h: 97vh;
+    }
+
+    #timeZone{
+        font-size: 24px;
+        gap: 10px;
+    }
+
+    #timeZone button i{
+        font-size: 24px;
+    }
+
+    #currentTime{
+        font-size: 100px;
+    }
+
+    #currentDate{
+        font-size: 24px;
+    }
+
+    #timeZoneSelectModal #timeZoneSelectDiv{
+        width: 90%;
+        padding: 20px;
+        gap: 10px;
+    }
+
+    #timeZoneSelectModal #timeZoneSelectDiv #timeZoneModalTitle{
+        font-size: 24px;
+    }
+    
+    #timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer{
+        gap: 10px;
+    }
+
+    #timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer #selectContainer select{
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    #timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer #selectContainer i{
+        font-size: 16px;
+        right: 15px;
+    }
+    
+    #timeZoneSelectModal #timeZoneSelectDiv #modalBottomContainer button{
+        font-size: 20px;
+    }
+}
