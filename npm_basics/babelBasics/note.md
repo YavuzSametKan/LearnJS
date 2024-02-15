@@ -1,4 +1,4 @@
-#Babel
+# Babel
 
 [Babel](https://babeljs.io/) temelde yazdığımız modern javascript kodlarını ES5 versiyonuna çeviren bir modüldür. Bu bizlere güncel olmayan tarayıcılarda desteklenmeyen ES6+ versiyon kodlarının çalışabilir olmasını sağlar çünkü babel bizim için ES5'e çevirme işlemi yapar ve bu kodlar tüm tarayıcılar tarafından desteklenir (Internet Explorer 11 dahil).
 
@@ -12,7 +12,7 @@ Elbette kafanızda şu soru oluşmuş olabilir; "2024'te kullandığımız taray
 
 Babel'ı tanıdımıza göre babel'ı kullanmaya başlayalım.
 
-##Babel modülünü kullanmak için projemize indirmemiz gereken modüller
+## Babel modülünü kullanmak için projemize indirmemiz gereken modüller
 
 1. @babel/cli
     > bu modül komut satırı arayüzünden (comand line interface) babel'ı kullanmanızı sağlar.
@@ -23,7 +23,9 @@ Babel'ı tanıdımıza göre babel'ı kullanmaya başlayalım.
 4. @babel/preset-env
     > bu modül ECMAScript versiyonlarının presetlerini içinde barındıran bir modüldür. Uygun preset seçilip ES5'e dönüşümü yapılır.
 
-`npm install @babel/cli @babel/core babel-polyfill @babel/preset-env --save-dev`
+```
+npm install @babel/cli @babel/core babel-polyfill @babel/preset-env --save-dev
+```
 
 dipnot: bu modül yalnızca geliştirme ortamında işinize yarıyacağı için devDependency olarak kurulumunu yapmanızı sağlayacak komutu sizlerle paylaştım. Aksi durumu tercih ederseniz komuttan `--save-dev` etiketini silebilirsiniz. 
 
