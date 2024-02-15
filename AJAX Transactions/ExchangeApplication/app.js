@@ -15,8 +15,10 @@ function exchange(){
         symbols : document.getElementById("symbol").value //? TRY,USD,EUR
     }
 
-    let api = apiAttr.basedUrl+"?access_key="+apiAttr.key+"&base="+apiAttr.base+"&symbols="+apiAttr.symbols;
+    
 
+    let api = apiAttr.basedUrl+"?access_key="+apiAttr.key+"&base="+apiAttr.base+"&symbols="+apiAttr.symbols;
+    console.log(api)
     xhr.open("GET",api,true);
 
     if(document.getElementById("amount").value == ""){

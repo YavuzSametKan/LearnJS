@@ -9,3 +9,5 @@ console.log("Name: " + name + "\n" + "Surname: " + surname + "\n" + "Phone: " + 
 // Template Literal Yazım
 console.log(`Name: ${name}\nSurname: ${surname}\nPhone: ${phone}\nSalary: ${salary}\nDepartment: ${department}`) 
 // ->``<- Bu tırnağı açabilmek için altgr + vigül kombinasyonuna bas. 
+
+console.log(`Name: ${name},\nSurname: ${surname},\nPhone: ${phone},\nSalary: ${salary},\nDepartment: ${department}`);

@@ -20,10 +20,11 @@ console.log(arr)
 arr.shift()
 console.log(arr)
 
-
-
 arr.reverse()
 console.log(arr)
 
-arr.splice(0,7) // index range -> [0,7)
+arr = [98,21,32,76,43,65,10,87,54]
+
+let splicedArr = arr.splice(0,7) // index range -> [0,7)
+console.log(splicedArr);
 console.log(arr)
