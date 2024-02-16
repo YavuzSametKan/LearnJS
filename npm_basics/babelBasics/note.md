@@ -14,6 +14,8 @@ Babel'ı tanıdımıza göre babel'ı kullanmaya başlayalım.
 
 ## Babel modülünü kullanmak için projemize indirmemiz gereken modüller
 
+### Adım 1
+
 1. @babel/cli
     > bu modül komut satırı arayüzünden (comand line interface) babel'ı kullanmanızı sağlar.
 2. @babel/core
@@ -28,3 +30,80 @@ npm install @babel/cli @babel/core babel-polyfill @babel/preset-env --save-dev
 ```
 
 > dipnot: bu modül yalnızca geliştirme ortamında işinize yarıyacağı için devDependency olarak kurulumunu yapmanızı sağlayacak komutu sizlerle paylaştım. Aksi durumu tercih ederseniz komuttan `--save-dev` etiketini silebilirsiniz. 
+
+### Adım 2
+
+Bu adımda ayar (config) dosyası oluşturmamız gerekmektedir. Yapmanız gereken şey projenizin altında bir `babel.config.json` isimli dosya oluşturmak. Bu dosyayı oluşturma amacımız ihtiyaç doğrultusunda dönüştürme işleminde kullanacağımız presetleri seçmektir. Yani babel'e aynı bir dil çevirme uygulaması kullanırken belirttiğimiz çevirmek istediğimiz dil tercihleri gibi şu versiyondan şu versiyona çevir komutunu vereceğiz.
+
+babel.config.json dosyasının içine eklenecek kod:
+```
+{
+    "presets": ["@babel/preset-env"]
+}
+```
+
+### Adım 3
+
+Gerekli modülleri indirdikten sonra babel'ı konsol ortamında kullanabilmek için `babel.cmd` dosyasının yolunu belirtmemiz gerekmektedir aksi durumda konsol babel'ı bulamayacaktır. Bu sebeple `node_moduls` klasörünün içindeki `.bin` klasörüne ve onunda içindeki `babel.cmd` dosyasına ulaşmamız gerekmekte ve bu şekilde komudu çalıştırmamız gekemektedir.
+
+Windows için:
+
+```
+.\node_modules\.bin\babel
+```
+
+Linux ve Mac için:
+
+```
+./node_modules/.bin/babel
+```
+
+### Adım 4
+
+Bu adımda dönüştürme işlemini yapacağız bunun için örnek olarak `src` klasöründeki ES6+ versiyon kodlara sahip .js dosyalarını `lib` klasörünün altında aynı isimde yeni .js dosyaları üretip ES5 versiyonuna dönüştüren komutu kullanacağız.
+
+> bu aşamada javascript dosyalarınızın `src` klasöründe olması gerekmektedir, aksi durumda `src` klasörü dışındaki javascript dosyalarınızı ES5'e çevirip `lib` klasörüne atmayacaktır!
+
+Dönüştürme Komut'u:
+```
+.\node_modules\.bin\babel src --out-dir lib
+```
+
+>dipnot: bu komut çok uzun olduğundan dolayı dilerseniz bu kodu `package.json` dosyanızın içindeki `script` objesinin içerisine ekleyebilirsiniz. Ancak burada `.\node_modules\.bin\babel` kullanımı yerine `babel` yazmanız gerekmektedir, bunun sebebi `package.json` dosyasının modülün ayar dosyası olmasıdır ve babel'ı otomatik bulabilmesidir.
+
+Örnek komut:
+```
+babel src --out-dir lib
+```
+
+Örnek komutun package.json'a eklenmesi:
+```
+{
+  "name": "babelbasics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir lib" <--- Komut kısayolumuzu buraya ekledik.
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "babel-polyfill": "^6.26.0"
+  }
+}
+```
+
+> Artık konsol ekranında `npm run buid` yazdığınız zaman kısa yol komudunuz çalışmış olacaktır.
+
+### Adım 5 (Son)
+
+Başardınız artık javascript dosyalarınız bütün tarayıcılarda kullanılmaya hazır.
+
+## Son söz
+
+Umarım siz değerli okurlarıma bir faydam dokunmuştur. Aklınıza takılan veya sormak istediğiniz soruları yssk.personal@gmail.com adresine email atabilir ya da [LinkedIn](https://www.linkedin.com/in/yavuz-samet-kan/) hesama mesaj göndererek sorabilirsiniz, dilerseniz herhangi bir konuda iletişime geçmek için de yazabilirsiniz. Buraya kadar okuduğunuz için teşekkür ederim, bugsız kodlamalar. :)
