@@ -1,6 +1,6 @@
 # Babel
 
-[Babel](https://babeljs.io/) temelde yazdığımız modern javascript kodlarını ES5 versiyonuna çeviren bir modüldür. Bu bizlere güncel olmayan tarayıcılarda desteklenmeyen ES6+ versiyon kodlarının çalışabilir olmasını sağlar çünkü babel bizim için ES5'e çevirme işlemi yapar ve bu kodlar tüm tarayıcılar tarafından desteklenir (Internet Explorer 11 dahil).
+[Babel](https://babeljs.io/) temelde yazdığımız modern javascript kodlarını ES5 (2009) versiyonuna çeviren bir modüldür. Bu bizlere güncel olmayan tarayıcılarda desteklenmeyen ES6+ versiyon özelliklerin çalışabilir olmasını sağlar. Babel bizim için ES5'e çevirme işlemi yapar ve bu kodlar tüm tarayıcılar tarafından desteklenir (Internet Explorer 11 dahil).
 
 > dipnot: [bu web sayfasından](https://compat-table.github.io/compat-table) ECMAScript tarayıcı desteklerine bakabilirsiniz
 
@@ -12,10 +12,8 @@ Elbette kafanızda şu soru oluşmuş olabilir; "2024'te kullandığımız taray
 
 Babel'ı tanıdımıza göre babel'ı kullanmaya başlayalım.
 
-## Babel modülünü kullanmak için projemize indirmemiz gereken modüller
-
 ### Adım 1
-
+Babel modülünü kullanmak için projemize indirmemiz gereken modüller şunlardır;
 1. @babel/cli
     > bu modül komut satırı arayüzünden (comand line interface) babel'ı kullanmanızı sağlar.
 2. @babel/core
@@ -25,6 +23,7 @@ Babel'ı tanıdımıza göre babel'ı kullanmaya başlayalım.
 4. @babel/preset-env
     > bu modül ECMAScript versiyonlarının presetlerini içinde barındıran bir modüldür. Uygun preset seçilip ES5'e dönüşümü yapılır.
 
+Bütün bu modülleri indirmeniz için gereken komut:
 ```
 npm install @babel/cli @babel/core babel-polyfill @babel/preset-env --save-dev
 ```
@@ -98,7 +97,7 @@ babel src --out-dir lib
 }
 ```
 
-> Artık konsol ekranında `npm run buid` yazdığınız zaman kısa yol komudunuz çalışmış olacaktır.
+> Artık konsol ekranına `npm run buid` yazdığınız zaman kısa yol komutunuz çalışmış olacaktır.
 
 ### Adım 5 (Son)
 

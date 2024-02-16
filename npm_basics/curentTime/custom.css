@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 :root{
     --main-w: 95vw;
@@ -32,6 +33,10 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#mainContainer{
+    width: 660px;
 }
 
 #timeZone{
@@ -157,6 +162,10 @@ main{
 @media only screen and (max-width: 700px) {
     :root{
         --main-h: 97vh;
+    }
+
+    #mainContainer{
+        width: 330px;
     }
 
     #timeZone{
