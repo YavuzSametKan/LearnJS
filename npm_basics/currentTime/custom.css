@@ -14,6 +14,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    /*cursor: none !important;*/
 }
 
 body{
@@ -22,6 +23,66 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+#cursor{
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    transition:ease-out .2s;
+    animation: cursorAnim .5s infinite alternate;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#cursor::after{
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    animation: cursorAfterAnim .5s infinite alternate;
+}
+
+#cursor.click{
+    animation: cursorClickAnim .5s forwards;
+    border: 2px solid black;
+}
+
+@keyframes cursorAnim{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+
+@keyframes cursorAfterAnim{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(.8);
+    }
+}
+
+@keyframes cursorClickAnim{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
 }
 
 main{
@@ -33,7 +94,18 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
 }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 #mainContainer{
     width: 660px;
