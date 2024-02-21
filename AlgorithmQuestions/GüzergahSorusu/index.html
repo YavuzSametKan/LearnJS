@@ -1,0 +1,37 @@
+<!-- 
+    ?Sorunun kaynağı: https://www.youtube.com/watch?v=DznGpuy-MAQ&t
+
+    * Gereksinimler:
+    * 1. Yeni durak ekle butonuna basınca inpGroupsContainer id'sine sahip elemanın altına
+        * inpGroup class'ına sahip div tekrar tekrar alt alta üretilecek
+    * 2. Güzergah input'u ve formGroup input'ları doluysa Kaydet butonu aktif aksi durumda pasif olacak
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Güzergah Sorusu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <header>
+        <input id="routeInp" type="text" placeholder="Güzergah">
+        <button id="addStationBtn" type="button">Yeni Durak Ekle</button>
+        </header>
+        <main id="inpGroupsContainer">
+            <div class="inpGroup">
+                <input class="stationNameInp" type="text" placeholder="Durak Adı">
+                <input class="stationLatitudeInp" type="text" placeholder="Enlem">
+                <input class="stationLongitudeInp" type="text" placeholder="Boylam">
+            </div>
+        </main>
+        <footer>
+            <button button id="saveBtn" type="submit" disabled="true">KAYDET</button>
+        </footer>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>

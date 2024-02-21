@@ -86,7 +86,6 @@ function addTodo(e){
         showAlert("success", "Todo başarıyla eklendi.");
     }
     
-
     e.preventDefault();
 }
 

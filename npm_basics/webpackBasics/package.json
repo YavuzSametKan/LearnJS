@@ -1,0 +1,11 @@
+{
+  "name": "webpackbasics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "watch": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
